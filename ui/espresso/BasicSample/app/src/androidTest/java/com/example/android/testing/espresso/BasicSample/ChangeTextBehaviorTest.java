@@ -18,15 +18,15 @@ package com.example.android.testing.espresso.BasicSample;
 
 import android.app.Activity;
 
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-
 import androidx.test.espresso.action.ViewActions;
 import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
+
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -53,14 +53,14 @@ public class ChangeTextBehaviorTest {
      * Use {@link ActivityScenarioRule} to create and launch the activity under test, and close it
      * after test completes. This is a replacement for {@link androidx.test.rule.ActivityTestRule}.
      */
-    @Rule public ActivityScenarioRule<MainActivity> activityScenarioRule
+    @Rule
+    public ActivityScenarioRule<MainActivity> activityScenarioRule
             = new ActivityScenarioRule<>(MainActivity.class);
 
     @Test
     public void changeText_sameActivity() {
         // Type text and then press the button.
-        onView(withId(R.id.editTextUserInput))
-                .perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
+        onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
         onView(withId(R.id.changeTextBt)).perform(click());
 
         // Check that the text was changed.
@@ -70,8 +70,7 @@ public class ChangeTextBehaviorTest {
     @Test
     public void changeText_newActivity() {
         // Type text and then press the button.
-        onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED),
-                closeSoftKeyboard());
+        onView(withId(R.id.editTextUserInput)).perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
         onView(withId(R.id.activityChangeTextBtn)).perform(click());
 
         // This view is in a different Activity, no need to tell Espresso.
