@@ -47,15 +47,14 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 @LargeTest
 public class ChangeTextBehaviorTest {
 
-    public static final String STRING_TO_BE_TYPED = "Espresso";
+    private static final String STRING_TO_BE_TYPED = "Espresso";
 
     /**
      * Use {@link ActivityScenarioRule} to create and launch the activity under test, and close it
-     * after test completes. This is a replacement for {@link androidx.test.rule.ActivityTestRule}.
+     * after test completes.
      */
     @Rule
-    public ActivityScenarioRule<MainActivity> activityScenarioRule
-            = new ActivityScenarioRule<>(MainActivity.class);
+    public ActivityScenarioRule<MainActivity> activityScenarioRule = new ActivityScenarioRule<>(MainActivity.class);
 
     @Test
     public void changeText_sameActivity() {

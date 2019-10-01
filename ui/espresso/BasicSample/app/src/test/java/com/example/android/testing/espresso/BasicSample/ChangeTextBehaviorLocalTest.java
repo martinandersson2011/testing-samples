@@ -31,8 +31,7 @@ public final class ChangeTextBehaviorLocalTest {
      * Use {@link ActivityScenarioRule} to create and launch the activity under test.
      */
     @Rule
-    public ActivityScenarioRule<MainActivity> activityScenarioRule =
-            new ActivityScenarioRule<MainActivity>(MainActivity.class);
+    public ActivityScenarioRule<MainActivity> activityScenarioRule = new ActivityScenarioRule<MainActivity>(MainActivity.class);
 
     @Before
     public void intentsInit() {
